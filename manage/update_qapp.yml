@@ -1,0 +1,16 @@
+---
+- name: Update QApp
+  hosts: 127.0.0.1
+  vars_files:
+    - ../vars/common.yml
+
+  tasks:
+    - name: Update qapp repo
+      git: repo={{ repo_url }} dest={{ qapp_path }} update=yes
+
+    - name: Django migrate
+      django_manage: >
+        command=migrate
+        app_path={{ qapp_path }}
+        virtualenv={{ virtualenv_path }}
+        settings={{ qapp_settings_module }}

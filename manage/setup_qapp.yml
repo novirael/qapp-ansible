@@ -1,0 +1,20 @@
+---
+- name: Setup QApp
+  hosts: 127.0.0.1
+  vars_files:
+    - ../vars/common.yml
+
+  tasks:
+    - name: Create code directory
+      file: path={{ code_path }} state=directory
+
+    - name: Clone qapp repo
+      git: repo={{ repo_url }} dest={{ qapp_path }}
+
+    - name: Install app requirements
+      pip: >
+        chdir={{ abs_repo_path }}
+        virtualenv={{ virtualenv_path }}
+        virtualenv_python=python3
+        requirements={{ requirements_path }}
+      when: requirements_path is defined

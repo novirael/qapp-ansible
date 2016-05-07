@@ -1,0 +1,11 @@
+---
+abs_repo_path: "{{ playbook_dir }}/.."
+
+repo_url: https://github.com/sterhannzer/FlexForms
+repo_name: qapp
+
+code_path: "{{ abs_repo_path }}/code"
+qapp_path: "{{ code_path }}/qapp"
+qapp_settings_module: flexforms.settings
+virtualenv_path: "{{ code_path }}/env"
+requirements_path: "{{ qapp_path }}/requirements.txt"
