@@ -1,4 +1,8 @@
 # qapp-ansible
-## This is a simple example of using ansible as configuration management tool
+### This is a simple example of using ansible as configuration management tool to configure [QApp](https://github.com/sterhannzer/FlexForms) webapp. 
 
-[QApp](https://github.com/sterhannzer/FlexForms) is a web application to carry out a surveys by customised forms.
+
+## Usage
+1. Clone repo and install requirements.
+1. Run `./qapp.py setup` to setup env (only first time).
+2. Run `./qapp.py update` every time you need to update your master branch.

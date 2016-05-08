@@ -72,3 +72,5 @@ docs/_build/
 #osx
 .DS_Store
 .DS_Store?
+
+code/
