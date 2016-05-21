@@ -14,3 +14,10 @@
         app_path={{ qapp_path }}
         virtualenv={{ virtualenv_path }}
         settings={{ qapp_settings_module }}
+
+    - name: Django collectstatic
+      django_manage: >
+        command=collectstatic
+        app_path={{ qapp_path }}
+        virtualenv={{ virtualenv_path }}
+        settings={{ qapp_settings_module }}
