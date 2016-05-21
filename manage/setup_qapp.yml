@@ -11,6 +11,9 @@
     - name: Clone qapp repo
       git: repo={{ repo_url }} dest={{ qapp_path }}
 
+    - name: Create logs directory for qapp
+      file: path={{ logs_path }} state=directory
+
     - name: Install app requirements
       pip: >
         chdir={{ abs_repo_path }}
